@@ -7,6 +7,9 @@ import { Agenda } from './agenda';
   providedIn: 'root'
 })
 export class AgendaService {
+  delete(agenda: Agenda) {
+    throw new Error('Method not implemented.');
+  }
 
   private url = 'http://localhost:3000/agendas';
 
@@ -14,5 +17,13 @@ export class AgendaService {
 
   getAgendas(): Observable<Agenda[]>{
     return this.http.get<Agenda[]>(this.url);
+  }
+
+  getAgendasById(id: number): Observable<Agenda> {
+    return this.http.get<Agenda>(`${this.url}/${id}`);
+  }
+  
+  delete(agenda: Agenda): Observable<void> {
+    return this.http.delete<void>(`${this.url}/${agenda.id}`);
   }
 }

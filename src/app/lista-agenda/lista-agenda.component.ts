@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendaService } from '../agenda.service';
 import { Router } from '@angular/router';
+import { Agenda } from '../agenda';
 
 @Component({
   selector: 'app-lista-agenda',
