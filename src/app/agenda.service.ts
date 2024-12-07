@@ -7,15 +7,6 @@ import { Agenda } from './agenda';
   providedIn: 'root'
 })
 export class AgendaService {
-  updade(value: any) {
-    throw new Error('Method not implemented.');
-  }
-  save(value: any) {
-    throw new Error('Method not implemented.');
-  }
-  delete(agenda: Agenda) {
-    throw new Error('Method not implemented.');
-  }
 
   private url = 'http://localhost:3000/agendas';
 

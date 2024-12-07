@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListaAgendaComponent } from './lista-agenda/lista-agenda.component';
-import { FormAgendaComponent } from './form-agenda/form-agenda.component';
+import { AgendaListaComponent } from './lista-agenda/lista-agenda.component';
+import { AgendaFormComponent } from './form-agenda/form-agenda.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -13,14 +17,18 @@ import { HttpClientModule } from '@angular/common/http';
     AgendaListaComponent,
     AgendaFormComponent,
     HomeComponent,
-    NavbarComponent,
-    HttpClientModule
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    provideClientHydration()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
