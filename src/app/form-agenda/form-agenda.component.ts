@@ -51,3 +51,4 @@ export class AgendaFormComponent implements OnInit {
       next: () => this.router.navigate(['/agendas'])
     })
   }
+}
